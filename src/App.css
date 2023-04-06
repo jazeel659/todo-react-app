@@ -9,7 +9,7 @@
   margin: auto;
   width: 50%;
   border-radius: 5px;
-  border-radius: 4px;
+  border-radius: 15px;
   padding: 10px;
 }
 .input-div input{
@@ -50,4 +50,7 @@ outline: none;
 }
 .button-div button{
   margin: 5px;
+}
+button{
+  border-radius: 7px;
 }

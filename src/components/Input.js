@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
+import { useDispatch } from "react-redux";
 
 function Input({ addTask }) {
   const [value, setvalue] = useState("");
@@ -10,6 +11,7 @@ function Input({ addTask }) {
     }
     console.log(value);
   };
+  const dispatch = useDispatch();
   return (
     <div className="input-div">
       <input
@@ -19,7 +21,16 @@ function Input({ addTask }) {
         }}
         value={value}
       ></input>
-      <button onClick={addItem}>add</button>
+      <button
+        onClick={() => {
+          dispatch({
+            type: "addtask",
+            payload: value,
+          });
+        }}
+      >
+        add
+      </button>
     </div>
   );
 }
